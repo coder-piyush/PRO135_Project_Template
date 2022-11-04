@@ -7,7 +7,7 @@ $(document).ready(function(){
     let current_date = date.toDateString()
 
     //  display the date on the HTML page using JQUERY and JS
-    $('').text('Date : ' + current_date)
+    $('#date').text('Date : ' + current_date)
 
     
     let review = ""
@@ -22,7 +22,7 @@ $(document).ready(function(){
         $.ajax({
 
             // type of request
-            type : '',
+            type : 'POST',
 
             // url
             url : api_url,
@@ -97,9 +97,9 @@ $(document).ready(function(){
     })
 
     //  check if Submit button under 'camera' is clicked and get the review accordingly
-    $('').click(function(){
+    $('#c_button').click(function(){
 
-        review = $('').val()
+        review = $('#c_textbox').val()
         input_data = {'customer_review' : review}
         ajax_request('/predict' , input_data)
 
@@ -107,9 +107,9 @@ $(document).ready(function(){
     })
 
     //  check if Submit button under 'headphones' is clicked and get the review accordingly
-    $('').click(function(){
+    $('#h_button').click(function(){
 
-        review = $('').val()
+        review = $('#h_textbox').val()
         input_data = {'customer_review' : review}
         ajax_request('/predict' , input_data)
 
@@ -117,9 +117,9 @@ $(document).ready(function(){
     })
 
     //  check if Submit button under 'videogame' is clicked and get the review accordingly
-    $('').click(function(){
+    $('#v_button').click(function(){
 
-        review = $('').val()
+        review = $('#v_textbox').val()
         input_data = {'customer_review' : review}
         ajax_request('/predict' , input_data)
 
